@@ -7,31 +7,60 @@ class listSearch
 {
 private:
 
-	//used to sort the vector for recursive binary and iterative binary searching
-	void mergeSort(std::vector<int>& list, int low, int high);
+	//initialized vector needed for the class
+	std::vector<int>& vec;
 
 	//searches for the target by splitting the vector in half and searching through the halves
-	void recursiveBinarySearch(std::vector<int>& list, int target, int low, int high);
+	int recursiveBinarySearch(std::vector<int>& vec, int target, int low, int high);
+
+	//sorting the vector
+	void mergeSort(std::vector<int>& vec);
+
+	//a function for merge sort
+	void merge(std::vector<int>& vec, std::vector<int> leftlist, std::vector<int> rightlist);
+
+	int nonRecursiveBinarySearch(const std::vector<int>& vec, int target);
+
+	int sequentialSearch(const std::vector<int>& vec, int target);
+
 
 public:
-	
+
 	//constructor
-	listSearch(std::vector<int>& list);
+	listSearch(std::vector<int>& list):vec(list){}
 
-	//function overloaded to make calling the function a lot simpler.
-	void mergeSort(std::vector<int>&list)
+	//sorting the vector, overloaded for simplicity
+	void mergeSort()
 	{
-		mergeSort(list, 0 , list.size() - 1);
+		mergeSort(vec);
 	}
 
 	//function overloaded to make calling the function a lot simpler.
-	void recursiveBinarySearch(std::vector<int>& list, int target)
+	int recursiveBinarySearch(int target)
 	{
-		recursiveBinarySearch(list, target, 0, list.size() - 1);
+		return recursiveBinarySearch(vec, target, 0, vec.size() - 1);
 	}
 
-	void nonRecursiveBinarySearch(const std::vector<int>& list, int target);
+	//function overloaded to make calling the function a lot simpler.
+	int nonRecursiveBinarySearch(int target)
+	{
+		return nonRecursiveBinarySearch(vec, target);
+	}
 
-	int sequentialSearch(const std::vector<int>& list, int target);
+	//function overloaded to make calling the function a lot simpler.
+	int sequentialSearch(int target)
+	{
+		return sequentialSearch(vec, target);
+	}
 
-};	
+	void printList()
+	{
+		int size = vec.size();
+		for (int i = 0; i < size; i++)
+		{
+			std::cout << vec[i] << " -> ";
+		}
+
+		std::cout << "end\n";
+	}
+};

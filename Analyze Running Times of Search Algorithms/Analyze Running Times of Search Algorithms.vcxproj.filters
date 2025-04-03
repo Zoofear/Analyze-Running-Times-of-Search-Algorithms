@@ -18,12 +18,12 @@
     <ClCompile Include="Analyze Running Times of Search Algorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ListSeach.cpp">
+    <ClCompile Include="listSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ListSearch.h">
+    <ClInclude Include="listSearch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
