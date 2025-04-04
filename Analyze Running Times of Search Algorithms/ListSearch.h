@@ -53,6 +53,10 @@ public:
 		return sequentialSearch(vec, target);
 	}
 
+	//Search Function that lest you choose which algorithm to use and outputs the results
+	// Method 1 = recursive binary search, Method 2 = iterative binary search, Method 3 = sequential search
+	void outputSearch(int method, int target);
+
 	void printList()
 	{
 		int size = vec.size();

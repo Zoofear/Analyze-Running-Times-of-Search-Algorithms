@@ -145,3 +145,40 @@ int listSearch::sequentialSearch(const std::vector<int>& vec, int target)
 
 	return -1; //Target not found
 }
+
+void listSearch::outputSearch(int method, int target)
+{
+	int index;
+	
+	if (method == 1) //Recursive Binary Search
+	{
+		mergeSort();
+
+		index = recursiveBinarySearch(target);
+	}
+	else if (method == 2)
+	{
+		mergeSort();
+
+		index = nonRecursiveBinarySearch(target);
+	}
+	else
+	{
+		if (method != 3)
+		{
+			std::cout << "The algorithm chosen is not supported, defaulting to the sequential search algorithm.\n";
+		}
+
+		index = sequentialSearch(target);
+		
+	}
+	
+	if (index > 0)
+	{
+		std::cout << "The Target was found at position : " << index << ".\n";
+	}
+	else
+	{
+		std::cout << "The Target was not found.\n";
+	}
+}

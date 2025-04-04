@@ -22,6 +22,18 @@ int main(){
 		std::cout << list[i] << " -> ";
 	}
 
-	std::cout << "end " << std::endl;
+	int target = distribution(rng);
+
+	listSearch list1(list);
+
+	list1.printList();
+
+	list1.outputSearch(1, target);
+
+	list1.outputSearch(2, target);
+
+	list1.outputSearch(3, target);
+
+	list1.outputSearch(4, target);
 	
 }
